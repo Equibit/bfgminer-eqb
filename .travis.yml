@@ -9,10 +9,8 @@ env:
 matrix:
   fast_finish: true
   include:
-    - compiler: ": MinGW64 ncurses"
-      env: UBUNTU_DEPS='gcc-mingw-w64-x86-64' EXTRA_DEPS='pkg-config yasm' CROSS_BINPKGS='x86_64-w64-mingw32+ncurses' BUILD_CFLAGS='-Werror' CONFIGURE_ARGS='--enable-other-drivers --enable-keccak --enable-scrypt --without-system-libbase58 --host=x86_64-w64-mingw32 --disable-knc --disable-bfsb --disable-jingtian --disable-metabank --disable-minergate --disable-titan --disable-kncasic --disable-minion'
     - compiler: ": Std Keccak"
-      env: myCC='clang' UBUNTU_DEPS='libhidapi-dev linux-libc-dev' EXTRA_DEPS='pkg-config libncursesw5-dev libudev-dev libusb-1.0-0-dev libevent-dev libmicrohttpd-dev libi2c-dev yasm libsensors4-dev' CONFIGURE_ARGS='--enable-keccak'
+      env: myCC='clang' EXTRA_DEPS='pkg-config libssl-dev uthash-dev libjansson-dev libcurl4-openssl-dev libncursesw5-dev' CONFIGURE_ARGS='--enable-keccak --disable-sha256d --enable-cpumining --enable-opencl --disable-other-drivers'
   exclude:
     - compiler: gcc
 install:
