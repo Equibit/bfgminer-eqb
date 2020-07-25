@@ -1,5 +1,2 @@
-test "x$1" = "xI-am-okay-with-destroying-my-system" || exit 1
-set -ex
-
 sudo apt-get install -y build-essential libtool autotools-dev automake bsdmainutils $EXTRA_DEPS $DEV_DEPS
 
